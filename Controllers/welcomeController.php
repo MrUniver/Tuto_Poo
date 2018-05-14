@@ -20,7 +20,7 @@ class welcomeController extends  Controller
                 $this->Session->addKey('User', ['user_name'=>$user->user_name, 'user_id'=>$user->user_id]);
                 \Strange\Config\Routeur::redirect('profile');
             }else{
-                $this->Session->setFlash("Vous n'êtes pas inscris ou votre compte n'est pas activer", 'success');
+                $this->Session->setFlash("Vous n'êtes pas inscris ou votre compte n'est pas activer", 'danger');
             }
         }
         return $this->render('connexion');

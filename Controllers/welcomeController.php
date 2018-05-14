@@ -62,9 +62,13 @@ class welcomeController extends  Controller
     {
         if (isset($token) && filter_var($email, FILTER_VALIDATE_EMAIL)){
             if ($this->Welcome->isUserExist($token, $email)){
-                echo 'bien';
+                if($this->Welcome->update(['user_email'=>$email, 'user_token'=>$token], ['user_activate'=>1])){
+                    $this->Session->setFlash("Votre compte est activez, connectez-vous ", 'success');
+                    \Strange\Config\Routeur::redirect('.');
+                }
             }
         }else{
+            $this->Session->setFlash("Votre compte ne peut pas être activez ", 'danger');
             \Strange\Config\Routeur::redirect('.');
         }
     }

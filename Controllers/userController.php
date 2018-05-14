@@ -2,7 +2,7 @@
 class userController extends Controller {
 
 	public $title = 'Programmation Orientée Objet';
-
+	protected $template = 'default';
 
     protected $composants = array(
 		'form'

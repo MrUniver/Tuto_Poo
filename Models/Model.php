@@ -148,4 +148,29 @@ class Model{
         return $this->prepare('INSERT INTO '.$this->table.' ('.$clesAll.') VALUES('.$valeursAll.')', $fields);
     }
 
+    /**
+     * @param array $conditions
+     * @param array $fields
+     * @return array|PDOStatement
+     */
+    public function update(array $conditions , array $fields)
+    {
+        $sql_parts_keys = [];
+        $attributs      = [];
+        $where_id       = [];
+        $where_value    = [];
+        foreach ($fields as $key => $value) { //pour les champs
+            $sql_parts_keys[]               = htmlspecialchars("$key = :$key");
+            $attributs[$key]                = htmlspecialchars($value);
+        }
+        foreach ($conditions as $condition => $cond) { // pour les conditions
+            $where_id[]                     = "$condition =:$condition";
+            $where_value[$condition]        = $cond;
+        }
+        $sql_parts_keys         = implode(', ', $sql_parts_keys);
+        $where_id               = implode(' And ', $where_id);
+        $attributs              = array_merge($where_value, $attributs);
+        return $this->prepare("UPDATE ".$this->table. " SET ".$sql_parts_keys ." WHERE ".$where_id, $attributs);
+    }
+
 }

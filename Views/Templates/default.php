@@ -36,8 +36,8 @@
 
 <div class="content">
     <h2>Activation de compte et connexion utilisateur</h2>
-    <?php $this->Session->flash(); ?>
   <div class="container" style="border:1px solid #000;border-radius: 5px;padding: 10px;">
+      <?php $this->Session->flash(); ?>
       <?= $page_content ?>
   </div>
 

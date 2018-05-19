@@ -160,12 +160,12 @@ class Model{
         $where_id       = [];
         $where_value    = [];
         foreach ($fields as $key => $value) { //pour les champs
-            $sql_parts_keys[]   = htmlspecialchars("$key = :$key");
-            $attributs[]        = htmlspecialchars($value);
+            $sql_parts_keys[]               = htmlspecialchars("$key = :$key");
+            $attributs[$key]                = htmlspecialchars($value);
         }
         foreach ($conditions as $condition => $cond) { // pour les conditions
-            $where_id[]         = "$condition=:$condition";
-            $where_value[]      = $condition;
+            $where_id[]                     = "$condition =:$condition";
+            $where_value[$condition]        = $cond;
         }
         $sql_parts_keys         = implode(', ', $sql_parts_keys);
         $where_id               = implode(' And ', $where_id);

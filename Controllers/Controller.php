@@ -8,11 +8,13 @@ Class Controller{
 	protected $viewPath;
 	protected $composants = [];
 	protected $db;
+	protected $template;
 
 	public function __construct()
 	{
 		preg_match('/[a-z]+/', get_class($this), $matches);
 		$this->viewPath = ucfirst($matches[0]).'s';
+		$this->template ?? $this->template;
 	}
 
     /**
@@ -25,7 +27,7 @@ Class Controller{
 		extract($vars);
 		require ROOT."Views/".$this->viewPath.'/'.$view.'.php';
 		$page_content = ob_get_clean();
-		require ROOT.'Views/Templates/default.php';
+		require ROOT.'Views/Templates/'.$this->template.'.php';
 	}
 
     /**

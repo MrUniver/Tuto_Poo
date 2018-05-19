@@ -7,7 +7,7 @@ class welcomeController extends  Controller
         'session'
     );
 
-
+    protected $template = "default";
 
     protected $title = 'TutoChat';
 

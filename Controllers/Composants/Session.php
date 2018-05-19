@@ -48,6 +48,17 @@ class Session
         }
     }
 
+    /**
+     * @param string $key
+     * @return mixed
+     */
+    public function getKey(string $key)
+    {
+        if (isset($_SESSION[$key])){
+            return $_SESSION[$key];
+        }
+    }
+
 
 
 }

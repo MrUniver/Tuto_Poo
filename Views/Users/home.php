@@ -21,8 +21,15 @@
         </div>
     </div>
 </div>
-<div style="display: inline-block; border:1px solid red; padding:10px;">
-    <h3>Mets ton humeur du jour</h3>
-    <textarea name="user_humer" id="user_humer" class="form-control" style="outline:none;"></textarea><br>
-    <button class="btn btn-primary btn-lgt" style="float: left;">Envoyer</button>
+<div style="display:grid; border:1px solid red; padding:10px;grid-template-rows:1fr 3fr;grid-row-gap:1rem">
+    <div class="header">
+        <h3>Mets ton humeur du jour</h3>
+        <span id="message_status"></span>
+        <textarea name="user_humer" id="user_humer" class="form-control" style="outline:none;"></textarea><span id="help-user_humer"></span><br>
+
+        <button class="btn btn-primary btn-lgt" style="float: left;" id="send_status">Envoyer</button>
+    </div>
+    <div class="message" style="text-align: left">
+        mes message
+    </div>
 </div>

@@ -29,7 +29,21 @@
 
         <button class="btn btn-primary btn-lgt" style="float: left;" id="send_status">Envoyer</button>
     </div>
-    <div class="message" style="text-align: left">
-        mes message
+    <div class="message" style="text-align: left; border:1px solid red">
+        <div class="message_box" style="display: grid;grid-template-rows:1fr 2fr;padding:5px;">
+            <div class="message_header">
+                <span class="message_pseudo" style="text-align: left;">
+                    Moi et Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, quam!
+                </span>
+                <span class="message_date" style="text-align: right;float: right;">
+                    aujo
+                </span>
+            </div>
+
+            <div class="message_text">
+                message
+            </div>
+
+        </div>
     </div>
 </div>

@@ -1,5 +1,8 @@
 <div style="display: inline-block; border:1px solid red;">
     <div class="card">
+        <?php
+        var_dump($user);
+        ?>
         <div class="card-header"><div class="card-title"><?= $user->user_name ?></div></div>
         <div class="card-body">
             <img src="http://via.placeholder.com/350x350" alt="">
@@ -13,8 +16,13 @@
                         <td><?= $user->user_name ?></td>
                     </tr>
                     <tr>
-                        <td>Votre age</td>
-                        <td>Votre Prénom</td>
+                        <?php
+                        $date = new DateTime($user->user_register);
+                        var_dump($date);
+                        echo $date->format('Y-m-d H:i:s');
+                        ?>
+                        <td>Votre âge</td>
+                        <td><?php //date('Y-m-d h:i:s') .' $ - $ '. date_format('Y-m-d',$user->user_register)  ?></td>
                     </tr>
                 </table>
         

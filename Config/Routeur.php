@@ -119,4 +119,3 @@ class Routeur
         exit;
     }
 }
-//cle identification http://monecoledeconduite.fr/ :314323006199805

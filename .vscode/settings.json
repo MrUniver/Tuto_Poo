@@ -1,0 +1,24 @@
+{
+    "sqltools.connections": [
+        {
+            "askForPassword": true,
+            "connectionTimeout": 30,
+            "database": "HAYA",
+            "dialect": "MySQL",
+            "name": "Haya",
+            "port": 3306,
+            "server": "127.0.0.1",
+            "username": "root"
+        },
+        {
+            "askForPassword": true,
+            "connectionTimeout": 30,
+            "database": "tutoriel",
+            "dialect": "MySQL",
+            "name": "Tuto_POO",
+            "port": 3306,
+            "server": "127.0.0.1",
+            "username": "root"
+        }
+    ]
+}

@@ -21,8 +21,4 @@ class userController extends Controller {
         unset($_SESSION['User']);
         \Strange\Config\Routeur::redirect('.');
     }
-
-
-
-
 }

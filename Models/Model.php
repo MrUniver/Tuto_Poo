@@ -96,6 +96,7 @@ class Model{
 		}
 
 		$data = $this->prepare($req, $resValue);
+		var_dump($req);
 		return $data;
 	}
 

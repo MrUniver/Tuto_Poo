@@ -20,10 +20,19 @@ class User extends Model
         )
     );
 
+    public function getMe(string $key)
+    {
+        return $this->findCurrent(array(
+           'conditions' => array(
+               'user_id='   => $key
+           )
+        ));
+    }
+
     public function getUsers()
     {
         return $this->find(array(
-            'fields'=> array('username', 'password')
+            'fields'=> array('user_name', 'user_password'),
         ));
     }
 

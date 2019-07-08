@@ -11,6 +11,7 @@ Routeur::get("/" , "welcome@connexion");
 Routeur::get("/inscription" , "welcome@inscription");
 Routeur::get('confirmtoken-{token}-{email}', 'welcome@confirmtoken')
     ->with('token', '[a-z0-9]+');
-Routeur::get('/profile', 'user@home');
+Routeur::get('/profile', 'user@index');
+Routeur::get('/logout', 'user@logout');
 
 Routeur::run();

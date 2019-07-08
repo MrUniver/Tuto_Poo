@@ -2,41 +2,27 @@
 class userController extends Controller {
 
 	public $title = 'Programmation Orientée Objet';
-
+	protected $template = 'home';
 
     protected $composants = array(
-		'form'
+		'form',
+        'session'
 	);
 
-	public function create()
-	{
-        if ($this->User->validate()){
-            $this->User->save($_POST);
-        }
-       return $this->render('create', compact('data'));
-	}
-
-	public function update($id)
-	{
-		echo ' modifier le profil n° '.$id;
-		$this->render('update');
-	}
-
-	public function show()
-	{
-		echo ' mon profil ';
-	}
-
-	public function connect()
-	{
-	    var_dump($this->User->getUsers());
-    }
-
-    public function home()
+    public function index()
     {
-        echo 'Bienvenu a toi';
-        session_start();
-        var_dump($_SESSION);
+        $me = $this->Session->getKey('User');
+        $user   = $this->User->getMe($me['user_id']);
+        return $this->render('home', compact('me', 'user'));
     }
+
+    public function logout()
+    {
+        unset($_SESSION['User']);
+        \Strange\Config\Routeur::redirect('.');
+    }
+
+
+
 
 }

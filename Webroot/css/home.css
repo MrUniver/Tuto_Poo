@@ -1,0 +1,21 @@
+*{ box-sizing: border-box; }
+.content{
+    width:96%;
+    height:auto;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin:120px auto;
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    grid-column-gap:10px;
+}
+.panel-heading{
+    border:1px solid green;
+    font-weight: bold;
+    font-size: 2rem;
+    height:50px;
+    line-height:40px;
+
+}
